@@ -106,7 +106,7 @@ class Question(models.Model):
     # question text
     # question grade/mark
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    question = models.TextField()
+    question_text = models.TextField()
     grade = models.FloatField(default=0.0)
     
 
@@ -128,7 +128,7 @@ class Question(models.Model):
     # Other fields and methods you would like to design
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice = models.TextField()
+    choice_text = models.TextField()
     is_correct = False
 
 # <HINT> The submission model
