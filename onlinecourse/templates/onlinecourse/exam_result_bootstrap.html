@@ -52,16 +52,16 @@
     <h5 class="">Exam results</h5>
         <!--HINT Display exam results-->
         {% for question in course.question_set.all %}
-            <div class="card">
-                <h5>{{question.question_text}}</h5>
-                {% for choice in question.choice_set.all %}
-                    {% if choice.is_correct %}
-                        <p class="text-danger">{{choice.choice_text}}</p>
-                    {% else %}
-                        <p class="text-success">{{choice.choice_text}}</p>
-                    {% endif %}
-                {% endfor %} 
-            </div>
+        <div class="card">
+            <h5>{{question.question_text}}</h5>
+            {% for choice in question.choice_set.all %}
+                {% if choice.is_correct %}
+                <p class="text-success">Correct answer: {{choice.choice_text}}</p>
+                {% else %}
+                <p class="text-warning">{{choice.choice_text}}</p>
+                {% endif %}
+            {% endfor %} 
+        </div>
         {% endfor %}        
     </div>
 </div>
